@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="com.jc.jcsports.utils.ServerURL" />
+
+        <variable
+            name="c_Model"
+            type="com.jc.jcsports.model.chat.ChattingModel" />
+    </data>
+
+    <LinearLayout
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/date_V"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_Padding"
+            android:text="@{c_Model.c_MessageTime}"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/default_TextSize"/>
+
+    </LinearLayout>
+</layout>

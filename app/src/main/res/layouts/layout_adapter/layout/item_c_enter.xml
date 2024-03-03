@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="c_Model"
+            type="com.jc.jcsports.model.chat.ChattingModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/date_V"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_file_background"
+            android:layout_marginHorizontal="@dimen/default_PaddingHorizontal"
+            android:layout_marginVertical="@dimen/default_PaddingHorizontal"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:text="@{c_Model.c_MessageTime}"
+            android:textSize="@dimen/default_TextSize"
+            tools:visibility="visible"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_below="@+id/date_V"
+            android:id="@+id/t_V"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="@dimen/default_MinHeight"
+            android:text="@{c_Model.c_Message}"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/default_TextSize" />
+    </RelativeLayout>
+</layout>

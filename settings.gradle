@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+
+
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+
+
+    }
+    buildscript {
+        dependencies {
+            def crashlyticsVersion = "2.9.2";
+            def analyticsVersion = "4.3.10";
+            def kotlin_version = "1.8.22";
+            classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsVersion"
+            classpath "com.google.gms:google-services:$analyticsVersion"
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        }
+    }
+}
+rootProject.name = "JCSports"
+include ':app'

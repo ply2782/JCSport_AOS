@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_TextSize">13sp</dimen>
+    <dimen name="default_TextSize_2">26sp</dimen>
+    <dimen name="default_Padding">10dp</dimen>
+    <dimen name="p_10">10dp</dimen>
+    <dimen name="p_20">20dp</dimen>
+    <dimen name="default_PaddingHorizontal">20dp</dimen>
+    <dimen name="default_PaddingVertical">20dp</dimen>
+    <dimen name="default_marginTop">10dp</dimen>
+    <dimen name="default_marginHorizontal">40dp</dimen>
+    <dimen name="indicator_size">10dp</dimen>
+    <dimen name="frames_video_height">40dp</dimen>
+    <dimen name="default_MinHeight">48dp</dimen>
+    <dimen name="default_CardViewPadding">10dp</dimen>
+    <dimen name="Custom_MinHeight">80dp</dimen>
+
+    <dimen name="b_ItemSize">50dp</dimen>
+    <dimen name="b_ItemSize_60">60dp</dimen>
+    <dimen name="b_ItemSize_70">70dp</dimen>
+    <dimen name="b_ItemSize_80">80dp</dimen>
+    <dimen name="b_ItemSize_100">100dp</dimen>
+
+    <dimen name="customFloatingSize">80dp</dimen>
+    <dimen name="bottomNavigationFloatingMinHeight">60dp</dimen>
+    <dimen name="image_size">300dp</dimen>
+    <dimen name="image_margin">30dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="minus_margin_20">-20dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="s_10">10dp</dimen>
+    <dimen name="s_20">20dp</dimen>
+    <dimen name="s_30">30dp</dimen>
+    <dimen name="behavior_peekHeight">200dp</dimen>
+
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.jc.jcsports.utils.ServerURL" />
+
+        <variable
+            name="loginModel"
+            type="com.jc.jcsports.model.LoginModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/default_PaddingHorizontal"
+        android:paddingVertical="@dimen/default_PaddingVertical">
+
+        <LinearLayout
+            android:id="@+id/c_0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/b_ItemSize"
+                android:layout_height="@dimen/b_ItemSize"
+                android:elevation="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/s_PhotoImageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    android:contentDescription="@string/TODO"
+                    android:scaleType="centerCrop"
+                    app:imageLoad="@{ServerURL.IMAGE_URL+loginModel.s_PhotoList.get(0).f_Name}" />
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="@dimen/default_Padding"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@{loginModel.s_NickName+`님의 게시물`}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_TextSize" />
+        </LinearLayout>
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_20" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:minHeight="@dimen/default_MinHeight"
+            app:cardBackgroundColor="@color/white"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <EditText
+                android:id="@+id/r_ContentView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/insertReplyText"
+                android:inputType="textMultiLine"
+                android:minHeight="@dimen/default_MinHeight"
+                android:maxHeight="200dp"
+                android:maxLength="300"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/default_TextSize" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_20" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/default_MinHeight"
+            app:cardBackgroundColor="@color/white"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="10dp"
+            android:elevation="10dp"
+            app:cardElevation="5dp">
+
+            <Button
+                android:id="@+id/completeButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="댓글 작성 완료"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_TextSize" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>

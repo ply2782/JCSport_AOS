@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/main"
+        android:enabled="true"
+        android:icon="@android:drawable/alert_dark_frame"
+        android:iconTint="@android:color/holo_blue_bright"
+        android:iconTintMode="src_in"
+        android:title="게시판"
+        android:tooltipText="게시판 입니다."
+        app:showAsAction="withText|ifRoom" />
+
+
+    <item
+        android:id="@+id/main1"
+        android:enabled="true"
+        android:icon="@android:drawable/alert_dark_frame"
+        android:iconTint="@android:color/holo_blue_bright"
+        android:iconTintMode="src_in"
+        android:title="채팅"
+        android:tooltipText="채팅 입니다."
+        app:showAsAction="withText|ifRoom" />
+
+
+
+    <item
+        android:id="@+id/main0"
+        android:enabled="true"
+        android:icon="@null"
+        app:showAsAction="withText|ifRoom"
+        android:title="" />
+
+
+
+    <item
+        android:id="@+id/main2"
+        android:enabled="true"
+        android:icon="@android:drawable/alert_dark_frame"
+        android:iconTint="@android:color/holo_blue_bright"
+        android:iconTintMode="src_in"
+        android:title="유저리스트"
+        android:tooltipText="유저리스트 입니다."
+        app:showAsAction="withText|ifRoom" />
+
+
+    <item
+        android:id="@+id/main3"
+        android:enabled="true"
+        android:icon="@android:drawable/alert_dark_frame"
+        android:iconTint="@android:color/holo_blue_bright"
+        android:iconTintMode="src_in"
+        android:title="스토어"
+        android:tooltipText="스토어 입니다."
+        app:showAsAction="withText|ifRoom" />
+
+
+</menu>

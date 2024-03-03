@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">JCSports</string>
+    <string name="jcText">제이씨</string>
+    <string name="agreeText">본 약관에 동의표시를 체크해주세요.</string>
+    <string name="loginListText">소셜 로그인</string>
+    <string name="agree_first_Text">개인정보 이용약관 동의</string>
+    <string name="agree_second_Text">서비스 이용약관 동의</string>
+    <string name="agree_third_Text">정책 이용약관 동의</string>
+    <string name="myAuthenticText">본인인증</string>
+    <string name="hint_phoneText">전화번호를 입력해주세요</string>
+    <string name="phone_textHint">ex) 010xxxxxxxx</string>
+    <string name="hint_authenticText">인증번호를 입력해주세요</string>
+    <string name="authentic_textHint">ex) A12s3421</string>
+    <string name="authenticCheckText">인증번호 발송</string>
+    <string name="authenticText">인증</string>
+    <string name="TODO">TODO</string>
+    <string name="createReplyText">댓글 달기</string>
+    <string name="videoText">동영상</string>
+    <string name="imageText">사진</string>
+    <string name="createBulletinContentText">내용을 입력해주세요.</string>
+    <string name="createBulletinFileText">이미지 또는 동영상을 업로드 해주세요.</string>
+    <string name="hint_nicknameText">닉네임을 입력해주세요.</string>
+    <string name="checkDoubleNickNameText">중복확인</string>
+    <string name="insertPictureText">사진을 넣어주세요.</string>
+    <string name="completeText">가입완료</string>
+    <string name="default_notification_channel_id">jcsports</string>
+    <string name="replyText"># 댓글</string>
+    <string name="lookText"># 방문</string>
+
+    <string name="insertReplyText">댓글을 입력해주세요.</string>
+    <string name="changeMyPhoto"># 사진 변경</string>
+
+    <string name="sum_B_Like_Count"># 게시물 좋아요 수</string>
+    <string name="sum_B_Look_Count"># 게시물 조회수</string>
+    <string name="compress"># 압축</string>
+    <string name="compress_cancel"># 취소</string>
+
+    <string name="notiFcmText"># 공지관련 알림</string>
+    <string name="chatFcmText"># 채팅관련 알림</string>
+    <string name="daliyFcmText"># 소식관련 알림</string>
+    <string name="logOutText"># 로그아웃</string>
+    <string name="joinOutText"># 회원탈퇴</string>
+    <string name="talk"># 대화하기</string>
+    <string name="talking"># 대화중</string>
+    <string name="send"># 보내기</string>
+
+
+</resources>
