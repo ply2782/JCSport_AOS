@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.jc.jcsports.utils.ServerURL" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="c_ListAdapter"
+            type="com.jc.jcsports.activities.adapter.C_ListAdapter" />
+
+        <variable
+            name="c_ListModel"
+            type="com.jc.jcsports.model.chat.ChatListModel" />
+
+        <variable
+            name="joinList"
+            type="List&lt;String&gt;" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(rootView)-> c_ListAdapter.move(rootView, c_ListModel.chatRoomListModel.c_Number)}"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/p_20"
+            android:paddingVertical="@dimen/p_20">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/p_Image"
+                android:layout_width="@dimen/b_ItemSize_60"
+                app:strokeColor="@null"
+                android:layout_height="@dimen/b_ItemSize_60"
+                android:scaleType="centerCrop"
+                app:imageLoad="@{ServerURL.IMAGE_URL + c_ListModel.c_JoinModel.get(0).s_LoginModel.s_PhotoList.get(0).f_Name}"
+                app:shapeAppearanceOverlay="@style/circle"
+
+                />
+
+            <Space
+                android:layout_width="@dimen/s_20"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@{joinList.toString()}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/default_TextSize" />
+
+                    <Space
+                        android:layout_width="@dimen/s_10"
+                        android:layout_height="0dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{``+c_ListModel.c_JoinModel.size()}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/default_TextSize" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/s_10" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{``+c_ListModel.chatMessageModel.c_Message}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_TextSize" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/s_20"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{``+c_ListModel.chatMessageModel.c_MessageTime}"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/default_TextSize" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/top_gradation"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{``+c_ListModel.chatMessageModel.c_UnReadCount}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_TextSize" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

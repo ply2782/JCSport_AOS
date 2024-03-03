@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="currentCount"
+            type="com.jc.jcsports.viewModel.NickNameTextCountViewModel" />
+
+        <variable
+            name="thisActivity"
+            type="com.jc.jcsports.activities.signupFunctions.SignUpActivity" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".activities.signupFunctions.SignUpActivity">
+
+            <include
+                android:id="@+id/topHeader"
+                layout="@layout/common_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_Padding"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/nicknameCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_marginTop"
+                android:text="@{currentCount.stringMutableLiveData}"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/default_TextSize"
+                app:layout_constraintBottom_toTopOf="@+id/cardView_2"
+                app:layout_constraintRight_toRightOf="@+id/cardView_2"
+                app:layout_constraintTop_toBottomOf="@+id/topHeader" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nicknameCountTextView">
+
+                <EditText
+                    android:id="@+id/nicknameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:autofillHints="username"
+                    android:background="@drawable/edittext_border_black"
+                    android:hint="@string/hint_nicknameText"
+                    android:inputType="textNoSuggestions"
+                    android:minHeight="48dp"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/default_TextSize" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintRight_toRightOf="@+id/cardView_2"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_2">
+
+                <Button
+                    android:id="@+id/checkDoubleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/agree_gradation"
+                    android:gravity="center"
+                    android:minHeight="@dimen/default_MinHeight"
+                    android:onClick="@{thisActivity::checkDoubleNickName}"
+                    android:text="@string/checkDoubleNickNameText"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_TextSize" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_3">
+
+                <RelativeLayout
+                    android:id="@+id/mainInsertPictureLayout"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp">
+
+
+
+
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/mainShapeableImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/edittext_border_black"
+                        android:contentDescription="@string/TODO"
+                        android:onClick="@{thisActivity::getImageFile_1}"
+                        android:scaleType="centerCrop"
+                        app:strokeColor="@null" />
+
+
+                    <LinearLayout
+                        android:visibility="@{thisActivity.signUpFunctions.userRealPhotoList.get(0) == null ? View.VISIBLE : View.INVISIBLE}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minHeight="@dimen/default_MinHeight"
+                            android:text="@string/insertPictureText"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/default_TextSize" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/TODO"
+                            android:src="@android:drawable/ic_input_add"
+                            app:tint="@color/black" />
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:onClick="@{thisActivity::removeImageFile_1}"
+                        android:contentDescription="@string/TODO"
+                        android:id="@+id/removeMainPictureButton"
+                        android:layout_alignEnd="@id/mainShapeableImageView"
+                        android:layout_width="@dimen/default_MinHeight"
+                        android:layout_height="@dimen/default_MinHeight"
+                        android:scaleType="fitCenter"
+                        app:tint="@color/white"
+                        android:backgroundTint="@android:color/transparent"
+                        android:src="@drawable/trash_48"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/subPictureLinearLayout"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_4">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/firstInsertPictureLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/secondShapeableImageView"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/edittext_border_black"
+                            android:contentDescription="@string/TODO"
+                            android:onClick="@{thisActivity::getImageFile_2}"
+                            android:scaleType="centerCrop"
+                            app:strokeColor="@null" />
+
+
+                        <LinearLayout
+                            android:visibility="@{thisActivity.signUpFunctions.userRealPhotoList.get(1) == null ? View.VISIBLE : View.INVISIBLE}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/TODO"
+                                android:src="@android:drawable/ic_input_add"
+                                app:tint="@color/black" />
+                        </LinearLayout>
+
+
+                        <ImageButton
+                            android:onClick="@{thisActivity::removeImageFile_2}"
+                            android:contentDescription="@string/TODO"
+                            android:id="@+id/removeSecondPictureButton"
+                            android:layout_alignEnd="@id/secondShapeableImageView"
+                            android:layout_width="@dimen/default_MinHeight"
+                            android:layout_height="@dimen/default_MinHeight"
+                            android:scaleType="fitCenter"
+                            app:tint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
+                            android:src="@drawable/trash_48"/>
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="0dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/secondInsertPictureLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/thirdShapeableImageView"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/edittext_border_black"
+                            android:contentDescription="@string/TODO"
+                            android:onClick="@{thisActivity::getImageFile_3}"
+                            android:scaleType="centerCrop"
+                            app:strokeColor="@null" />
+
+                        <LinearLayout
+                            android:visibility="@{thisActivity.signUpFunctions.userRealPhotoList.get(2) == null ? View.VISIBLE : View.INVISIBLE}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/TODO"
+                                android:src="@android:drawable/ic_input_add"
+                                app:tint="@color/black" />
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:onClick="@{thisActivity::removeImageFile_3}"
+                            android:contentDescription="@string/TODO"
+                            android:id="@+id/removeThirdPictureButton"
+                            android:layout_alignEnd="@id/thirdShapeableImageView"
+                            android:layout_width="@dimen/default_MinHeight"
+                            android:layout_height="@dimen/default_MinHeight"
+                            android:scaleType="fitCenter"
+                            app:tint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
+                            android:src="@drawable/trash_48"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="0dp" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/thirdInsertPictureLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/fourthShapeableImageView"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/edittext_border_black"
+                            android:contentDescription="@string/TODO"
+                            android:onClick="@{thisActivity::getImageFile_4}"
+                            android:scaleType="centerCrop"
+                            app:strokeColor="@null" />
+
+
+                        <LinearLayout
+                            android:visibility="@{thisActivity.signUpFunctions.userRealPhotoList.get(3) == null ? View.VISIBLE : View.INVISIBLE}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/TODO"
+                                android:src="@android:drawable/ic_input_add"
+                                app:tint="@color/black" />
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:onClick="@{thisActivity::removeImageFile_4}"
+                            android:id="@+id/removeFourthPictureButton"
+                            android:layout_alignEnd="@id/fourthShapeableImageView"
+                            android:layout_width="@dimen/default_MinHeight"
+                            android:layout_height="@dimen/default_MinHeight"
+                            android:scaleType="fitCenter"
+                            app:tint="@color/white"
+                            android:backgroundTint="@android:color/transparent"
+                            android:src="@drawable/trash_48"
+                            android:contentDescription="@string/TODO" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+            <Space
+                android:id="@+id/space_1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subPictureLinearLayout" />
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardView_8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space_1">
+
+                <Button
+                    android:id="@+id/completeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/agree_gradation"
+                    android:gravity="center"
+                    android:minHeight="@dimen/default_MinHeight"
+                    android:onClick="@{thisActivity::completeButton}"
+                    android:text="@string/completeText"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_TextSize" />
+            </androidx.cardview.widget.CardView>
+
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView_8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

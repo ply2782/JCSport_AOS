@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="thisDialog"
+            type="com.jc.jcsports.activities.filelistFunctions.fileDetailFunctions.ReplyListDialog" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            style="?attr/bottomSheetStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            app:behavior_peekHeight="@dimen/behavior_peekHeight"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <RelativeLayout
+                android:id="@+id/standard_bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/default_PaddingHorizontal"
+                android:paddingVertical="@dimen/default_PaddingVertical">
+
+                <Button
+                    android:id="@+id/replyButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/margin_20"
+                    android:background="@drawable/button_rounded"
+                    android:minHeight="@dimen/default_MinHeight"
+                    android:onClick="@{thisDialog::Reply}"
+                    android:text="@string/createReplyText"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_TextSize" />
+
+                <TextView
+                    android:id="@+id/t_TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/replyButton"
+                    android:minHeight="@dimen/default_MinHeight"
+                    android:paddingVertical="@dimen/default_PaddingVertical"
+                    android:text="@string/replyText"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_TextSize" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/replyR_View"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/t_TextView"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:spanCount="1" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

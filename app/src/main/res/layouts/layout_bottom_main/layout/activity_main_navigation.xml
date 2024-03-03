@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="thisActivity"
+            type="com.jc.jcsports.activities.navigationFunctions.MainNavigationActivity" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activities.navigationFunctions.MainNavigationActivity">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+            <FrameLayout
+                android:id="@+id/fragmentContainerFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true" />
+
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/Custom_MinHeight"
+                android:layout_gravity="bottom"
+                android:background="@android:color/transparent"
+                android:theme="@style/ThemeOverlay.Material3.BottomAppBar"
+                app:backgroundTint="@android:color/transparent"
+                app:elevation="0dp"
+                app:fabCradleMargin="10dp"
+                app:fabCradleRoundedCornerRadius="10dp"
+                app:fabCradleVerticalOffset="5dp">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/bottomNavigationFloatingMinHeight"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bottom_navigation_background"
+                    android:elevation="8dp"
+                    app:itemIconTint="@drawable/bottom_navigation_color_selector"
+                    app:labelVisibilityMode="unlabeled"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:menu="@menu/bottom_menu" />
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="@dimen/customFloatingSize"
+                android:layout_height="@dimen/customFloatingSize"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/app_name"
+                app:fabCustomSize="@dimen/customFloatingSize"
+                app:fabSize="auto"
+                android:onClick="@{thisActivity::show_UserInfo}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/kakao_login_large_wide"
+                app:layout_anchor="@id/bottomAppBar" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
